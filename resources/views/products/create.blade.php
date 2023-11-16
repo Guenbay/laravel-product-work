@@ -12,10 +12,10 @@
   </div>
   <br>
 
-<!--لو كان هناك خطأ أظهر لي -->
+
   @if ($errors->any())
   <div class="alert alert-danger" role="alert">
-    <ul><!--لو كان هناك خطأ أظهر لي جميع الأخطاء في حل عدم تعبئه الحقول الأجباريه-->
+    <ul>
         @foreach ($errors->all() as $item)
         <li>{{$item}}</li>
         @endforeach
@@ -28,8 +28,7 @@
 
 <div class='container p-5'>
 
-<!--احفظ المعلومات عن طريق store-->
-<!--لان نستخدم صور لازم ذكر enctype-->
+
 <form action="{{route('products.store')}}" method="post" enctype="multipart/form-data">
 @csrf 
 

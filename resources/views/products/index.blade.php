@@ -1,8 +1,8 @@
 @extends('products.layout')
-<!-- للوراثه من layout-->
+
 @section('content')
 <br>
- <!--  اذا وصلتني رساله بمفتاح success قم بعرضها-->
+
   @if ($message = Session::get('success'))
   <div class="alert alert-success" role="alert">
    {{$message}}
@@ -37,7 +37,7 @@
                     <td>{{$item->details}}</td>
                     <td>
                         <form action="{{route('products.destroy',$item->id)}}" method="post">
-                            @csrf <!--تاغ لامان من الهكر -->
+                            @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger mb-3 mx-3 px-3">Delete</button>
                              </form>
@@ -57,7 +57,7 @@
                 
             </tfoot>
     </table>
-<!--يتم وضع هذا الأقواس حتى يتم ترجمة تاج html و-css-->
+
     {!!  $product->links()   !!}
 </div>
 
